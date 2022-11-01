@@ -1,0 +1,29 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+table{
+    width: 100%;
+    justify-content: center;
+    margin-top: 50px;
+    text-align: center;
+}
+
+table thead{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+table td{
+    padding: 20px;
+}
+
+table tr:nth-child(even){
+    background-color: whitesmoke;
+}
+
+select{
+    padding:10px;
+    border-radius: 10px;
+}

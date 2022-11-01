@@ -1,0 +1,42 @@
+<div>
+    <form *ngIf="userType == 'student'" class="register-form" (submit)="$event.preventDefault();registerUser()">
+        <h2 class="form-title">Register a new student</h2>
+        <input [formControl]="formGroupStudent.controls['code']" type="number" name="code" class="form-control"
+                placeholder="Student code" required>
+        <input [formControl]="formGroupStudent.controls['name']" type="text" name="name" class="form-control"
+                placeholder="Student name" required>
+        <input [formControl]="formGroupStudent.controls['phoneNumber']" type="text" name="phoneNumber" class="form-control"
+                placeholder="Student phone number" required>
+        <input [formControl]="formGroupStudent.controls['email']" type="email" name="email" class="form-control"
+                placeholder="Student email" required>
+        <input [formControl]="formGroupStudent.controls['address']" type="text" name="address" class="form-control"
+                placeholder="Student address" required>
+        <input [formControl]="formGroupStudent.controls['dateOfBirth']" type="date" name="dateOfBirth" class="form-control"
+                placeholder="Student dateOfBirth" required>
+        <input [formControl]="formGroupStudent.controls['gender']" type="text" name="gender" class="form-control"
+                placeholder="Student gender" required>
+        <input [formControl]="formGroupStudent.controls['course']" type="text" name="course" class="form-control"
+                placeholder="Student courses (separated by comma)" required>
+        <input type="submit" value="Register"   >
+    </form>
+    <form *ngIf="userType == 'teacher'" class="register-form" (submit)="$event.preventDefault();registerUser()">
+        <h2 class="form-title">Register a new teacher</h2>
+        <input [formControl]="formGroupTeacher.controls['identification']" type="text" name="identification" class="form-control"
+                placeholder="Teacher identification" required>
+        <input [formControl]="formGroupTeacher.controls['name']" type="text" name="name" class="form-control"
+                placeholder="Teacher name" required>
+        <input [formControl]="formGroupTeacher.controls['phoneNumber']" type="text" name="phoneNumber" class="form-control"
+                placeholder="Teacher phone number" required>
+        <input [formControl]="formGroupTeacher.controls['email']" type="email" name="email" class="form-control"
+                placeholder="Teacher email" required>
+        <input [formControl]="formGroupTeacher.controls['address']" type="text" name="address" class="form-control"
+                placeholder="Teacher address" required>
+        <input [formControl]="formGroupTeacher.controls['dateOfBirth']" type="date" name="dateOfBirth" class="form-control"
+                placeholder="Teacher dateOfBirth" required>
+        <input [formControl]="formGroupTeacher.controls['gender']" type="text" name="gender" class="form-control"
+                placeholder="Teacher gender" required>
+        <input [formControl]="formGroupTeacher.controls['subject']" type="text" name="subject" class="form-control"
+                placeholder="Teacher subjects (separated by comma)" required>
+        <input type="submit" value="Register"   >
+    </form>
+</div>

@@ -1,0 +1,16 @@
+.register-form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 50%;
+}
+
+.register-form input{
+    padding: 10px;
+    margin: 5px;
+}
+
+.register-form input[type="submit"]{
+    width: 50%;
+    margin: auto;
+}
