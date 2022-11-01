@@ -18,6 +18,8 @@ export class RegisterFormComponent implements OnInit {
   teacher: Teacher;
 
   @Input() userType: String;
+  @Input() renderDataForm: () => void;
+
 
   formGroupStudent: FormGroup;
   formGroupTeacher: FormGroup;
@@ -59,7 +61,7 @@ export class RegisterFormComponent implements OnInit {
     })
   }
 
-  registerUser():void{
+  async registerUser(){
     if(this.userType == STUDENT){
         if(this.formGroupStudent.valid){
           this.student.code = this.formGroupStudent.controls["code"].value;
@@ -71,7 +73,7 @@ export class RegisterFormComponent implements OnInit {
           this.student.gender = this.formGroupStudent.controls["gender"].value;
           this.student.course = this.formGroupStudent.controls["course"].value;
           this.student.active = true;
-          this.crudOp.registerStudent(this.student).then(res =>{
+          await this.crudOp.registerStudent(this.student).then(res =>{
             alert("Registrado con exito")
             this.formGroupStudent.reset();
           }).catch(err =>{
@@ -97,6 +99,8 @@ export class RegisterFormComponent implements OnInit {
         })
       }
     }
+    window.location.reload();
+    this.renderDataForm();
   }
 
 }

@@ -26,18 +26,20 @@ export class AppComponent {
   }
 
   ngAfterContentInit() {
-    this.renderdata();
+    this.renderData();
   }
 
   updateUser(type: string): void {
     this.userType = type;
-    this.renderdata();
+    this.renderData();
   }
 
-  renderdata() {
+  renderData() {
+    console.log("renderData")
     if (this.userType == STUDENT)
       this.crudOp.getStudents().then(res => {
         this.data = res.students
+        console.log(this.data)
       })
     else {
       this.crudOp.getTeachers().then(res => {

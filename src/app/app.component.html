@@ -2,7 +2,7 @@
   <select #type (change)="updateUser(type.value)" >
     <option *ngFor="let t of types" [value]="t.id">{{t.name}}</option>
 </select>
-  <app-register-form [userType] = "userType"></app-register-form>
+  <app-register-form [renderDataForm]="renderData" [userType] = "userType"></app-register-form>
   <table>
     <thead>
       <td>Codigo</td>
